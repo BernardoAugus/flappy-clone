@@ -1,0 +1,12 @@
+# Godot: pastas e arquivos desnecessários
+.import/
+.export/
+export_presets.cfg
+
+# Editor settings
+.editor/
+*.godot/tmp/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
