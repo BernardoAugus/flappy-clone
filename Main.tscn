@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://yqxe88m1jh83"]
 
 [ext_resource type="Script" uid="uid://dxaeongb4hpqq" path="res://Bird.gd" id="1_uu6xs"]
-[ext_resource type="Texture2D" uid="uid://dcbdsrufoceel" path="res://assets/bird_sprite.png" id="2_r0du0"]
+[ext_resource type="Texture2D" uid="uid://brq3fre4qovru" path="res://assets/bird_sprite.png" id="2_r0du0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uu6xs"]
 radius = 180.336
