@@ -1,3 +1,4 @@
 res://Main.tscn
-res://Bird.gd
 res://PipePair.tscn
+res://PipeSpawner.gd
+res://scripts/PipeMover.gd
