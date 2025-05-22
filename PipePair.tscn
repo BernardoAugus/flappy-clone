@@ -1,25 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://c812t5kwcdu0b"]
+[gd_scene load_steps=4 format=3 uid="uid://c812t5kwcdu0b"]
 
 [ext_resource type="Texture2D" uid="uid://b55rcticrrx1m" path="res://assets/pipe_sprite.png" id="1_bsgse"]
+[ext_resource type="Script" uid="uid://bkpcawdk7c28w" path="res://scripts/PipeMover.gd" id="1_s6v3t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6v3t"]
 size = Vector2(815, 809)
 
 [node name="PipePair" type="Node2D"]
+script = ExtResource("1_s6v3t")
 
 [node name="PipeTop" type="Sprite2D" parent="."]
+scale = Vector2(0.45, 0.45)
 texture = ExtResource("1_bsgse")
-offset = Vector2(0, -600)
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeTop"]
-position = Vector2(-2, -594)
+position = Vector2(-26.6667, 6.10352e-05)
 shape = SubResource("RectangleShape2D_s6v3t")
 
 [node name="PipeBottom" type="Sprite2D" parent="."]
+scale = Vector2(0.45, 0.45)
 texture = ExtResource("1_bsgse")
-offset = Vector2(0, 600)
+offset = Vector2(0, 1500)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeBottom"]
-position = Vector2(-13, 600)
+position = Vector2(-4.44444, 1491.11)
 shape = SubResource("RectangleShape2D_s6v3t")

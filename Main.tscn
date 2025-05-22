@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://yqxe88m1jh83"]
+[gd_scene load_steps=6 format=3 uid="uid://yqxe88m1jh83"]
 
-[ext_resource type="Script" uid="uid://dxaeongb4hpqq" path="res://Bird.gd" id="1_uu6xs"]
+[ext_resource type="Script" uid="uid://dxaeongb4hpqq" path="res://scripts/Bird.gd" id="1_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://brq3fre4qovru" path="res://assets/bird_sprite.png" id="2_r0du0"]
 [ext_resource type="Script" uid="uid://ftmosvepb553" path="res://scripts/PipeSpawner.gd" id="3_r0du0"]
+[ext_resource type="PackedScene" uid="uid://c812t5kwcdu0b" path="res://PipePair.tscn" id="4_cm0pq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uu6xs"]
 radius = 180.336
@@ -10,10 +11,11 @@ radius = 180.336
 [node name="Main" type="Node2D"]
 
 [node name="Bird" type="CharacterBody2D" parent="."]
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_uu6xs")
 
 [node name="Sprite2D" type="Sprite2D" parent="Bird"]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_r0du0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bird"]
@@ -21,3 +23,4 @@ shape = SubResource("CircleShape2D_uu6xs")
 
 [node name="PipeSpawner" type="Node2D" parent="."]
 script = ExtResource("3_r0du0")
+pipe_scene = ExtResource("4_cm0pq")
