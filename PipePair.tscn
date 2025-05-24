@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c812t5kwcdu0b"]
+[gd_scene load_steps=6 format=3 uid="uid://c812t5kwcdu0b"]
 
 [ext_resource type="Texture2D" uid="uid://b55rcticrrx1m" path="res://assets/pipe_sprite.png" id="1_bsgse"]
 [ext_resource type="Script" uid="uid://bkpcawdk7c28w" path="res://scripts/PipeMover.gd" id="1_s6v3t"]
+[ext_resource type="Script" uid="uid://cydbfunhj7gg5" path="res://scripts/ZonaDePontuacao.gd" id="3_pksh8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6v3t"]
 size = Vector2(386.667, 826.722)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j2u3"]
+size = Vector2(20, 299)
 
 [node name="PipePair" type="Node2D"]
 script = ExtResource("1_s6v3t")
@@ -32,3 +36,11 @@ flip_v = true
 position = Vector2(12, 3.98752)
 scale = Vector2(0.45, 0.45)
 shape = SubResource("RectangleShape2D_s6v3t")
+
+[node name="ZonaDePontuacao" type="Area2D" parent="."]
+position = Vector2(-5, 327)
+script = ExtResource("3_pksh8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDePontuacao"]
+position = Vector2(97, 13)
+shape = SubResource("RectangleShape2D_7j2u3")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://yqxe88m1jh83"]
+[gd_scene load_steps=8 format=3 uid="uid://yqxe88m1jh83"]
 
+[ext_resource type="Script" uid="uid://bp1dfwxcnau1v" path="res://Main.gd" id="1_fos0i"]
 [ext_resource type="Script" uid="uid://dxaeongb4hpqq" path="res://scripts/Bird.gd" id="1_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://brq3fre4qovru" path="res://assets/bird_sprite.png" id="2_r0du0"]
 [ext_resource type="Script" uid="uid://ftmosvepb553" path="res://scripts/PipeSpawner.gd" id="3_r0du0"]
@@ -12,8 +13,10 @@ radius = 200.444
 radius = 203.443
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_fos0i")
 
 [node name="Bird" type="CharacterBody2D" parent="."]
+position = Vector2(200, 200)
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_uu6xs")
 
@@ -52,5 +55,12 @@ theme_override_font_sizes/font_size = 48
 text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PontuacaoLabel" type="Label" parent="UI"]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 100.0
+offset_bottom = 23.0
+text = "0"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Bird/SensorColisao" to="Bird" method="_on_sensor_colisao_body_entered"]

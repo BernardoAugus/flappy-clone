@@ -2,3 +2,5 @@ res://PipePair.tscn
 res://Main.tscn
 res://scripts/Bird.gd
 res://scripts/PipeSpawner.gd
+res://scripts/ZonaDePontuacao.gd
+res://Main.gd

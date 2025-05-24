@@ -37,3 +37,10 @@ func _on_sensor_colisao_body_entered(body: Node2D) -> void:
 	if body.is_in_group("obstaculo"):
 		print("💥 Colidiu com obstáculo")
 		morrer() # Replace with function body.
+
+var pontos := 0
+
+func _on_pontuou():
+	pontos += 1
+	print("🎯 Ponto marcado:", pontos)
+	$UI/PontuacaoLabel.text = str(pontos)
