@@ -26,6 +26,10 @@ func morrer():
 		set_physics_process(false)
 		print("💀 GAME OVER")
 
+		# Exibe o texto na tela
+		var ui = get_parent().get_node("UI/GameOverLabel")
+		ui.visible = true
+
 
 func _on_sensor_colisao_body_entered(body: Node2D) -> void:
 	print("💡 Colidiu com:", body.name)
