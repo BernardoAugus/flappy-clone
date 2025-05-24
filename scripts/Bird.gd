@@ -3,7 +3,12 @@ extends CharacterBody2D
 @export var gravity: float = 1000.0
 @export var jump_force: float = -350.0
 
+var vivo := true
+
 func _physics_process(delta):
+	if not vivo:
+		return
+
 	# Aplica gravidade constantemente
 	velocity.y += gravity * delta
 
@@ -13,3 +18,14 @@ func _physics_process(delta):
 
 	# Move o personagem verticalmente
 	move_and_slide()
+
+func morrer():
+	if vivo:
+		vivo = false
+		velocity = Vector2.ZERO
+		set_physics_process(false)
+		print("💀 GAME OVER")
+
+func _on_DetectorDeColisao_body_entered(body):
+	if body.is_in_group("obstaculo"):
+		morrer()
