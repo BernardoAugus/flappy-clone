@@ -5,11 +5,11 @@
 [ext_resource type="Script" uid="uid://ftmosvepb553" path="res://scripts/PipeSpawner.gd" id="3_r0du0"]
 [ext_resource type="PackedScene" uid="uid://c812t5kwcdu0b" path="res://PipePair.tscn" id="4_cm0pq"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_uu6xs"]
+radius = 200.444
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_cm0pq"]
 radius = 203.443
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_uu6xs"]
-radius = 180.336
 
 [node name="Main" type="Node2D"]
 
@@ -21,17 +21,16 @@ script = ExtResource("1_uu6xs")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_r0du0")
 
-[node name="DetectorDeColisao" type="Area2D" parent="Bird"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird/DetectorDeColisao"]
-shape = SubResource("CircleShape2D_cm0pq")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bird"]
-visible = false
 shape = SubResource("CircleShape2D_uu6xs")
+
+[node name="SensorColisao" type="Area2D" parent="Bird"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bird/SensorColisao"]
+shape = SubResource("CircleShape2D_cm0pq")
 
 [node name="PipeSpawner" type="Node2D" parent="."]
 script = ExtResource("3_r0du0")
 pipe_scene = ExtResource("4_cm0pq")
 
-[connection signal="body_entered" from="Bird/DetectorDeColisao" to="Bird" method="_on_Bird_body_entered"]
+[connection signal="body_entered" from="Bird/SensorColisao" to="Bird" method="_on_sensor_colisao_body_entered"]

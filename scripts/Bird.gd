@@ -26,6 +26,10 @@ func morrer():
 		set_physics_process(false)
 		print("💀 GAME OVER")
 
-func _on_DetectorDeColisao_body_entered(body):
+
+func _on_sensor_colisao_body_entered(body: Node2D) -> void:
+	print("💡 Colidiu com:", body.name)
+
 	if body.is_in_group("obstaculo"):
-		morrer()
+		print("💥 Colidiu com obstáculo")
+		morrer() # Replace with function body.
