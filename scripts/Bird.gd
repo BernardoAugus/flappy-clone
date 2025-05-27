@@ -30,6 +30,8 @@ func morrer():
 		var ui = get_parent().get_node("UI/GameOverLabel")
 		ui.visible = true
 
+		var botao = get_parent().get_node("UI/RestartButton")
+		botao.visible = true
 
 func _on_sensor_colisao_body_entered(body: Node2D) -> void:
 	print("💡 Colidiu com:", body.name)

@@ -62,5 +62,22 @@ offset_right = 100.0
 offset_bottom = 23.0
 text = "0"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RestartButton" type="Button" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = 14.5
+offset_right = 38.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Reiniciar"
 
 [connection signal="body_entered" from="Bird/SensorColisao" to="Bird" method="_on_sensor_colisao_body_entered"]
+[connection signal="pressed" from="UI/RestartButton" to="." method="_on_restart_button_pressed"]
