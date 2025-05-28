@@ -15,6 +15,7 @@ func _physics_process(delta):
 	# Quando o jogador aperta a tecla "pulo", aplica força para cima
 	if Input.is_action_just_pressed("pulo"):
 		velocity.y = jump_force
+		$SomPulo.play()
 
 	# Move o personagem verticalmente
 	move_and_slide()
@@ -24,6 +25,8 @@ func morrer():
 		vivo = false
 		velocity = Vector2.ZERO
 		set_physics_process(false)
+		$SomColisao.play()
+		
 		print("💀 GAME OVER")
 
 		# Exibe o texto na tela
