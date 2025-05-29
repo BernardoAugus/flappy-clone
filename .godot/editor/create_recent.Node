@@ -1,6 +1,9 @@
-AudioStreamPlayer
 Button
 Label
+VBoxContainer
+TextureRect
+Control
+AudioStreamPlayer
 CollisionShape2D
 Area2D
 CanvasLayer
